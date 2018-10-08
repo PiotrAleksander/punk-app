@@ -1,8 +1,8 @@
 import React from "react";
 
 export default beer => (
-  <>
-    <div>{beer.name}</div>
-    <img src={beer.image_url} alt={`${beer.name}`} />
-  </>
+  <li>
+    <img className="beer-image" src={beer.image_url} alt={`${beer.name}`} />
+    <span className="beer-name">{beer.name}</span>
+  </li>
 );

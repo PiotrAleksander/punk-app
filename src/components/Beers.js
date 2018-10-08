@@ -14,17 +14,24 @@ export const Beers = ({
   onTermTyped,
   onCancelClicked
 }) => (
-  <div>
-    <SearchBox term={term} onTermTyped={onTermTyped} />{" "}
-    {loading && (
-      <button type="button" onClick={onCancelClicked}>
-        Cancel
-      </button>
-    )}
+  <>
+    <div>
+      <SearchBox term={term} onTermTyped={onTermTyped} />{" "}
+      {term.length > 0 &&
+        loading && (
+          <button
+            className="cancel-button"
+            type="button"
+            onClick={onCancelClicked}
+          >
+            Cancel
+          </button>
+        )}
+    </div>
     {error && <div>An error occured: {errorMessage}</div>}
     {term.length > 0 && loading && <div>Loading...</div>}
     {beers.length > 0 && <BeersList beers={beers} />}
-  </div>
+  </>
 );
 
 const mapStateToProps = state => ({

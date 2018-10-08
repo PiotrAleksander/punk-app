@@ -3,9 +3,9 @@ import React from "react";
 import Beer from "./Beer";
 
 export default ({ beers }) => (
-  <div>
+  <ul className="beer-list">
     {beers.map(beer => (
       <Beer {...beer} key={beer.id} />
     ))}
-  </div>
+  </ul>
 );

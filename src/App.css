@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .App-logo {
@@ -29,4 +31,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.search-box {
+  width: 170px;
+}
+
+.cancel-button {
+  margin-top: 1rem;
+  max-width: 100px;
+}
+
+.beer-list {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
+.beer-name {
+  margin-left: 1rem;
+}
+
+.beer-image {
+  width: 30px;
+}
+
+.beer-image img {
+  max-width: 100%;
 }
