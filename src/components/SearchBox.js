@@ -5,6 +5,6 @@ export default props => (
     className="search-box"
     value={props.term}
     onChange={props.onTermTyped}
-    placeholder="Type yer chow quickly mate"
+    placeholder="Type yer chow quickly"
   />
 );
