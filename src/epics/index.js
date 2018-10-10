@@ -7,17 +7,18 @@ import {
   takeUntil,
   debounceTime
 } from "rxjs/operators";
-import { combineEpics } from "redux-observable";
+import { combineEpics, ofType } from "redux-observable";
 
 import {
-  SEARCH_BEER,
+  SEARCH_BEERS,
   SEARCH_CANCELLED,
   fetchBeersCompleted,
   fetchBeersRejected
 } from "../beersReducer";
 
-const searchBeersEpic = action$ =>
-  action$.ofType(SEARCH_BEER).pipe(
+export const searchBeersEpic = action$ =>
+  action$.pipe(
+    ofType(SEARCH_BEERS),
     debounceTime(250),
     filter(({ payload }) => payload.length > 0),
     mergeMap(({ payload }) =>

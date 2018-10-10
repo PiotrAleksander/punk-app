@@ -1,7 +1,7 @@
 const FETCH_BEERS = "FETCH_BEERS";
 const FETCH_BEERS_COMPLETED = "FETCH_BEERS_COMPLETED";
 const FETCH_BEERS_REJECTED = "FETCH_BEERS_REJECTED";
-export const SEARCH_BEER = "SEARCH_BEER";
+export const SEARCH_BEERS = "SEARCH_BEERS";
 export const SEARCH_CANCELLED = "SEARCH_CANCELLED";
 
 export default (
@@ -15,7 +15,7 @@ export default (
   action
 ) => {
   switch (action.type) {
-    case SEARCH_BEER:
+    case SEARCH_BEERS:
       return {
         ...state,
         beers: [],
@@ -70,7 +70,7 @@ export const fetchBeersRejected = error => ({
 });
 
 export const searchBeer = term => ({
-  type: SEARCH_BEER,
+  type: SEARCH_BEERS,
   payload: term
 });
 
